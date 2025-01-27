@@ -1,3 +1,4 @@
+import './ToDoList.css';
 import React, {useState} from 'react';
 
 function ToDoList (){
@@ -44,17 +45,27 @@ function ToDoList (){
     return (
         <>
             <h1>To do list:</h1>
-            <ul>
-                {tasks.map((task, index) =>
-                <li key={index}>
-                    {task} <button onClick={() => handleMoveUp(index)}>↑</button><button onClick={() => handleMoveDown(index)}>↓</button><button onClick={() => handleDelete(index)}>-</button>
-                </li>)}
-            </ul>
-            <ul>
-            <li><input type="text" placeholder="Enter a task" id="taskInput"></input>
-            <button onClick={handleAddTask}>+</button></li>
-            </ul>
-            <button onClick={handleResetList}>Reset</button>
+            <div id="container">
+                <ul>
+                    {tasks.map((task, index) =>
+                    <div className="line">
+                        <div id="task">
+                            <li key={index}>{task}</li>
+                        </div>
+                        <div id="buttons"> 
+                            <button onClick={() => handleMoveUp(index)}>↑</button><button onClick={() => handleMoveDown(index)}>↓</button><button onClick={() => handleDelete(index)}>-</button>
+                        </div>
+                    </div>
+                    )}
+                </ul>
+                <ul>
+                <div className="line">
+                    <div><li><input type="text" placeholder="Enter a task" id="taskInput"></input></li></div>
+                    <div><button onClick={handleAddTask}>+</button></div>
+                </div>
+                </ul>
+            </div>
+            <button onClick={handleResetList} id="reset_btn">Reset</button>
         </>
     )
 }
