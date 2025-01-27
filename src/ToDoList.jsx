@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import TaskInput from './TaskInput';
 
 function ToDoList (){
     const [tasks, setTasks] = useState(["e.g.: Water the plants"]);
@@ -11,7 +12,6 @@ function ToDoList (){
             return [newTask, ...tasksToKeep]})
         }
         document.getElementById('taskInput').value = "";
-        document.getElementById('message').textContent = "Click on a task once to move it up or twice to move it down";
     }
 
     function handleDelete(index){
@@ -38,6 +38,10 @@ function ToDoList (){
         });
     }
 
+    function handleResetList(){
+        window.location.reload()
+    }
+
     return (
         <>
             <h1>To do list:</h1>
@@ -48,10 +52,10 @@ function ToDoList (){
                 </li>)}
             </ul>
             <ul>
-            <li><input type="text" placeholder="Enter a task" id="taskInput"></input>
+            <li> <TaskInput id="taskInput" />
             <button onClick={handleAddTask}>+</button></li>
             </ul>
-            <p id="message"></p>
+            <button onClick={handleResetList}>Reset</button>
         </>
     )
 }
