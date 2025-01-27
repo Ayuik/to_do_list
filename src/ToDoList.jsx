@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import TaskInput from './TaskInput';
 
 function ToDoList (){
     const [tasks, setTasks] = useState(["e.g.: Water the plants"]);
@@ -52,7 +51,7 @@ function ToDoList (){
                 </li>)}
             </ul>
             <ul>
-            <li> <TaskInput id="taskInput" />
+            <li><input type="text" placeholder="Enter a task" id="taskInput"></input>
             <button onClick={handleAddTask}>+</button></li>
             </ul>
             <button onClick={handleResetList}>Reset</button>
