@@ -17,6 +17,7 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 ul {
@@ -31,7 +32,7 @@ ul {
 
 button {
     background-color: #66bb6a; 
-    border: none;
+    border: solid 1px #a7aaa7;
     border-radius: 50%;
     height: 30px;
     width: 30px;
@@ -42,6 +43,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    margin: 2px;
 }
 
 input {
@@ -54,7 +56,7 @@ input {
 
 #reset_btn {
     margin: auto;
-    border: solid 1px #59bb5e;
+    border: solid 1px #a7aaa7;
     border-radius: 10%;
     width: fit-content;
     padding: 10px;
